@@ -20,6 +20,7 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 '.js':
+  # Console snippets
   'Console log':
     'prefix': 'clog'
     'body': 'console.log($1);'
@@ -32,31 +33,43 @@
   'Decorative console log':
     'prefix': 'decor'
     'body': """
-console.log('************************************');
-console.log(${1});
-console.log('************************************');
-            """
+      console.log('************************************');
+      console.log(${1});
+      console.log('************************************');
+    """
   'Green console':
     'prefix': 'green'
     'body': 'console.log(\'%c $1\', \'color: green; font-weight: bold;\');'
   'Red console':
     'prefix': 'red'
     'body': 'console.log(\'%c $1\', \'color: red; font-weight: bold;\');'
+  'Blue console':
+    'prefix': 'blue'
+    'body': 'console.log(\'%c $1\', \'color: blue; font-weight: bold;\');'
+  'Console table':
+    'prefix': 'ctab'
+    'body': 'console.table($1);'
+
+  # Function snippets
   'Named function':
     'prefix': 'funcn'
     'body': 'function $1($2) {\n\t${3}\n}'
   'Anonymous function':
     'prefix': 'funca'
     'body': 'function($2) {\n\t${3}\n}'
-  'Class function':
-    'prefix': 'funcc'
-    'body': '$1($2) {\n\t${3}\n}'
   'Arrow function':
     'prefix': 'ar1'
     'body': '($1) => {\n\t${2}\n}'
   'Arrow function no parentheses':
     'prefix': 'ar2'
     'body': '$1 => {\n\t${2}\n}'
+  'Self executing anonymous function':
+    'prefix': 'anon'
+    'body': """
+      (function($2){
+        $3
+      })($1);
+    """
   'React component':
     'prefix': 'comp'
     'body': """
